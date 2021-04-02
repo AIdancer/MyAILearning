@@ -1,3 +1,28 @@
+### 自定义Dataset
+```python
+class MyDataSet(Dataset):
+    def __init__(self, _x, _y):
+        self.X = _x
+        self.y = _y
+    
+    def __getitem__(self, index):
+        return self.X[index], self.y[index]
+    
+    def __len__(self):
+        return self.y.shape[0]
+    
+bsize = 10
+loader = DataLoader(dataset=MyDataSet(x, y), batch_size=bsize)
+```
+
+### 网络参数初始化
+```python
+net = Net(42)
+for p in net.parameters():
+    nn.init.uniform_(p)
+
+```
+
 ### 多分类示例
     tag : softmax pytorch CrossEntropy
 ```python
