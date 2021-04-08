@@ -34,3 +34,11 @@ print('test score : ', accuracy_score(pred_test, y_test))
 
 # train score :  0.9991142857142857
 # test score :  0.9832666666666666
+
+pred = svm_clf.predict(X_train)
+pred_test = svm_clf.predict(X_test)
+print('train score : ', accuracy_score(pred, y_train))
+print('test score : ', accuracy_score(pred_test, y_test))
+
+# train score :  0.9738714285714286
+# test score :  0.9695
