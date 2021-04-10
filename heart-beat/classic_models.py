@@ -35,6 +35,9 @@ print('test score : ', accuracy_score(pred_test, y_test))
 # train score :  0.9991142857142857
 # test score :  0.9832666666666666
 
+svm_clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))
+svm_clf.fit(X_train, y_train)
+
 pred = svm_clf.predict(X_train)
 pred_test = svm_clf.predict(X_test)
 print('train score : ', accuracy_score(pred, y_train))
