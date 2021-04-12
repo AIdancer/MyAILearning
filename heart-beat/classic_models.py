@@ -20,8 +20,8 @@ y = feature[:,-1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
-param_dist = {'objective':'multi:softmax', 'n_estimators':100, 'max_depth':5, 'num_class':4}
-xgb_model = XGBClassifier()
+param_dist = {'objective':'multi:softmax', 'n_estimators':500, 'max_depth':6, 'use_label_encoder':False}
+xgb_model = XGBClassifier(**param_dist)
 xgb_model.fit(X_train, y_train, eval_set=[(X_train, y_train)], eval_metric='mlogloss', verbose=True)
 
 pickle.dump(xgb_model, open('xgb.dat', 'wb'))
