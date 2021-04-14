@@ -25,44 +25,27 @@ class MyDataSet(Dataset):
     
     def __len__(self):
         return self.y.shape[0]
-      
-  # v0
+    
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.model = nn.Sequential(
-            nn.Linear(205, 128),
+            nn.Linear(205, 1024),
+            nn.BatchNorm1d(1024),
             nn.ReLU(),
-            nn.Linear(128, 4),
+            nn.Linear(1024, 512),
+            nn.BatchNorm1d(512),
+            nn.ReLU(),
+            nn.Linear(512, 4)
         )
 
     def forward(self, x):
         ret = self.model(x)
         return ret
     
-# v1
-# class Net(nn.Module):
-#     def __init__(self):
-#         super(Net, self).__init__()
-#         self.model = nn.Sequential(
-#             nn.Linear(205, 128),
-#             nn.BatchNorm1d(128),
-#             nn.ReLU(),
-#             nn.Linear(128, 64),
-#             nn.BatchNorm1d(64),
-#             nn.ReLU(),
-#             nn.Linear(64, 4)
-#         )
-
-#     def forward(self, x):
-#         ret = self.model(x)
-#         return ret
-    
 net = Net()
 for p in net.parameters():
-    nn.init.normal_(p, mean=0, std=0.01)
-
-loss = nn.CrossEntropyLoss()
+    nn.init.normal_(p, mean=0, std=0.02)
 
 optimizer = torch.optim.SGD(net.parameters(), lr = 0.1)
 
@@ -90,6 +73,7 @@ for i in range(label.shape[0]):
     if c == int(label[i]):
         correct += 1
 print('训练集 acc : %.2f%%' % (correct * 100.0 / total))
+# 训练集 acc : 99.94%
 
 out = net(torch.tensor(X_test, dtype=torch.float32))
 pred_prob = F.softmax(out, dim=1)
@@ -103,3 +87,4 @@ for i in range(label.shape[0]):
         correct += 1
 print(total, correct, total-correct)
 print('测试集 acc : %.2f%%' % (correct * 100.0 / total))
+# 测试集 acc : 99.94%
