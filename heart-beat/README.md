@@ -3,8 +3,9 @@
 
 ### 模型总结
 
-  1. xgboost : 目前最好的排名由xgboost取得
+  1. xgboost : 仅次于DNN+xgboost
   2. 神经网络 : 神经网络得分略低于xgboost，总体准确率相当。
   3. SVM : 效果比前两个准确率总体低2%左右。
+  4. DNN + xgboost : 目前取得最好得分的模型
   
   
