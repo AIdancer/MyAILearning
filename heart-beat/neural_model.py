@@ -47,6 +47,8 @@ net = Net()
 for p in net.parameters():
     nn.init.normal_(p, mean=0, std=0.02)
 
+loss = nn.CrossEntropyLoss()
+    
 optimizer = torch.optim.SGD(net.parameters(), lr = 0.1)
 
 batch_size = 128
