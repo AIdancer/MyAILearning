@@ -3,3 +3,8 @@
 ```
 https://tangshusen.me/Dive-into-DL-PyTorch/#/
 ```
+
+### pytorch自然语言处理
+```
+https://apachecn.gitee.io/nlp-pytorch-zh/#/
+```
