@@ -16,3 +16,14 @@ https://www.youtube.com/watch?v=ugWDIIOHtPA&list=PLJV_el3uVTsOK_ZK5L0Iv_EQoL1Jef
 
 ### sentence transformer
 [https://www.sbert.net/](https://www.sbert.net/)
+
+### spacy（NLP，分词）
+```
+https://github.com/explosion/spaCy
+```
+
+### gensim （NLP，word2vec）
+```
+https://github.com/RaRe-Technologies/gensim
+```
+
