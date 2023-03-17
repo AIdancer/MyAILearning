@@ -27,3 +27,7 @@ https://github.com/explosion/spaCy
 https://github.com/RaRe-Technologies/gensim
 ```
 
+### 阿里云模型库
+```
+https://developer.aliyun.com/article/1175164
+```
