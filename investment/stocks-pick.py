@@ -20,7 +20,7 @@ inc_mid = df["inc_revenue_ttm"].median()
 print("inc_mid:{:.3f}".format(inc_mid))
 
 roe_mid = df["return_on_equity_ttm"].median()
-print("roe_mid:{:.3f}".format(ret_mid))
+print("roe_mid:{:.3f}".format(roe_mid))
 
 gross_mid = df["gross_profit_margin_ttm"].median()
 print("gross_mid:{:.3f}".format(gross_mid))
