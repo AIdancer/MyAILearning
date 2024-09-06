@@ -51,6 +51,7 @@ if __name__ == "__main__":
     X_test, y_test = load_mnist_test()
     pred_test = xgb_model.predict(X_test)
     print("test_scroe : {}".format(accuracy_score(pred_test, y_test)))
+# test_scroe : 0.9812
 ```
 
 ### mnist-DL model (MLP)
